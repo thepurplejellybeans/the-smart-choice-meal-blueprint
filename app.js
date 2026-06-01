@@ -78,7 +78,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container d-flex justify-content-between flex-wrap gap-2">
-        <span>© 2025 The Smart Choice Meal Blueprint · Jaymee B. & Quincy B. · All rights reserved.</span>
+        <span>© 2026 The Smart Choice Meal Blueprint · Jaymee B. & Quincy B. · All rights reserved.</span>
         <span>
           <a href="login.html" style="display:inline;margin:0 .5rem;">Login</a>·
           <a href="signup.html" style="display:inline;margin:0 .5rem;">Sign Up</a>
