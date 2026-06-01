@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nutrition | The Smart Choice Meal Blueprint</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+
+<div id="app-nav"></div>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Nutrition Centre</h1>
+    <p>Evidence-based guidance written for midlife families — not diet culture.</p>
+  </div>
+</div>
+
+<!-- FOOD LOG -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-5">
+        <div class="dash-card">
+          <div class="dash-title"><i class="fa-solid fa-utensils" style="color:var(--accent);"></i>Daily Food Log</div>
+          <p style="font-size:.88rem;color:var(--muted);">Track what you ate today (demo — not saved).</p>
+          <div class="form-scmb">
+            <label for="foodInput">Add a food or meal</label>
+            <div class="d-flex gap-2 mt-1">
+              <input id="foodInput" class="form-control" placeholder="e.g. Greek yogurt with berries" onkeydown="if(event.key==='Enter') logFood()">
+              <button class="btn-sm-cta" onclick="logFood()" style="white-space:nowrap;">Add</button>
+            </div>
+          </div>
+          <div id="foodList" class="mt-3"></div>
+          <p class="mt-3" style="font-size:.78rem;color:var(--muted);">Full nutrition tracking with calorie counts available to Pro &amp; Premium members.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="dash-card">
+          <div class="dash-title"><i class="fa-solid fa-circle-info" style="color:var(--accent);"></i>Today's Nutrition Focus</div>
+          <div class="row g-3">
+            <div class="col-6">
+              <div style="background:var(--cream);border-radius:8px;padding:1rem;text-align:center;">
+                <div style="font-size:2rem;color:var(--forest);font-family:'Cormorant Garamond',serif;font-weight:600;">Protein</div>
+                <p style="font-size:.82rem;color:var(--muted);margin:0;">Aim for 20–30g per meal to support muscle maintenance in midlife.</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:var(--cream);border-radius:8px;padding:1rem;text-align:center;">
+                <div style="font-size:2rem;color:var(--accent);font-family:'Cormorant Garamond',serif;font-weight:600;">Fibre</div>
+                <p style="font-size:.82rem;color:var(--muted);margin:0;">25–35g per day supports digestion and hormonal balance.</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:var(--cream);border-radius:8px;padding:1rem;text-align:center;">
+                <div style="font-size:2rem;color:var(--tan-dk);font-family:'Cormorant Garamond',serif;font-weight:600;">Hydration</div>
+                <p style="font-size:.82rem;color:var(--muted);margin:0;">8–10 glasses daily. Increases during hormonal fluctuations.</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:var(--cream);border-radius:8px;padding:1rem;text-align:center;">
+                <div style="font-size:2rem;color:var(--forest-lt);font-family:'Cormorant Garamond',serif;font-weight:600;">Omega-3s</div>
+                <p style="font-size:.82rem;color:var(--muted);margin:0;">Salmon, walnuts, flaxseed — support mood, heart, and joints.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUTRITION ARTICLES -->
+<section class="section-pad section-sand">
+  <div class="container">
+    <div class="text-center">
+      <p class="tag-pill mb-3">Educational Content</p>
+      <h2 class="section-heading">Nutrition Guidance for Midlife Parents</h2>
+      <div class="divider-leaf"></div>
+    </div>
+    <div class="row g-4 mt-2">
+      <div class="col-md-6 col-lg-4">
+        <div class="card-scmb">
+          <span class="card-icon"><i class="fa-solid fa-heart-pulse"></i></span>
+          <h5>Eating for Midlife Energy</h5>
+          <p style="font-size:.9rem;">How hormonal changes during perimenopause and andropause affect energy levels — and the foods that help stabilize them. Written for parents aged 35–55.</p>
+          <a href="#" class="btn-sm-cta mt-2">Read Article</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-scmb">
+          <span class="card-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+          <h5>Weight-Conscious Meal Planning</h5>
+          <p style="font-size:.9rem;">Practical, non-restrictive strategies for managing weight through smart meal planning — without deprivation or complicated macro counting.</p>
+          <a href="login.html" class="btn-sm-cta mt-2">Members Only</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-scmb">
+          <span class="card-icon"><i class="fa-solid fa-seedling"></i></span>
+          <h5>Seasonal Eating in Manitoba</h5>
+          <p style="font-size:.9rem;">A guide to eating fresh, affordable, and local throughout Manitoba's four seasons — from summer farmers' markets to winter root vegetables.</p>
+          <a href="#" class="btn-sm-cta mt-2">Read Article</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-scmb">
+          <span class="card-icon"><i class="fa-solid fa-child"></i></span>
+          <h5>Feeding Growing Kids &amp; Teens</h5>
+          <p style="font-size:.9rem;">Balancing the nutritional needs of school-age children and teenagers with the reality of picky eaters and busy schedules.</p>
+          <a href="login.html" class="btn-sm-cta mt-2">Members Only</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-scmb">
+          <span class="card-icon"><i class="fa-solid fa-leaf"></i></span>
+          <h5>Gluten-Free Family Eating</h5>
+          <p style="font-size:.9rem;">How to keep family meals cohesive and affordable when someone has a gluten intolerance. Includes recipe swaps and shopping tips.</p>
+          <a href="login.html" class="btn-sm-cta mt-2">Members Only</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-scmb">
+          <span class="card-icon"><i class="fa-solid fa-moon"></i></span>
+          <h5>Sleep, Stress &amp; Food Choices</h5>
+          <p style="font-size:.9rem;">The connection between sleep deprivation, stress hormones, and cravings — and how a solid meal plan helps break the cycle.</p>
+          <a href="login.html" class="btn-sm-cta mt-2">Members Only</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

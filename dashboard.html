@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard | The Smart Choice Meal Blueprint</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+
+<div id="app-nav"></div>
+
+<div class="page-header">
+  <div class="container">
+    <h1>My Dashboard</h1>
+    <p>Your meal planning hub — plan, track, and stay on budget.</p>
+  </div>
+</div>
+
+<section class="section-pad">
+  <div class="container">
+
+    <div class="row g-4">
+
+      <!-- MEAL PLAN GENERATOR -->
+      <div class="col-lg-7">
+        <div class="dash-card">
+          <div class="dash-title">
+            <i class="fa-solid fa-calendar-days" style="color:var(--accent);"></i>
+            This Week's Meal Plan
+          </div>
+          <p style="font-size:.9rem;color:var(--muted);">Click Generate to build a randomized 5-day meal plan. Upgrade to Pro or Premium to save and customize your plan.</p>
+          <button class="btn-primary-cta mb-3" onclick="generatePlan()">
+            <i class="fa-solid fa-wand-magic-sparkles me-2"></i>Generate My Plan
+          </button>
+          <div id="generatedPlan">
+            <div class="meal-row"><div class="meal-dot"></div><div><div class="meal-day">Monday</div><div class="meal-name">Click Generate to see your plan</div></div></div>
+            <div class="meal-row"><div class="meal-dot" style="background:var(--forest);"></div><div><div class="meal-day">Tuesday</div><div class="meal-name">—</div></div></div>
+            <div class="meal-row"><div class="meal-dot" style="background:var(--tan-dk);"></div><div><div class="meal-day">Wednesday</div><div class="meal-name">—</div></div></div>
+            <div class="meal-row"><div class="meal-dot"></div><div><div class="meal-day">Thursday</div><div class="meal-name">—</div></div></div>
+            <div class="meal-row"><div class="meal-dot" style="background:var(--forest);"></div><div><div class="meal-day">Friday</div><div class="meal-name">—</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK STATS -->
+      <div class="col-lg-5">
+        <div class="dash-card mb-4">
+          <div class="dash-title"><i class="fa-solid fa-chart-simple" style="color:var(--accent);"></i>Weekly Overview</div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-1"><span style="font-size:.88rem;font-weight:600;">Meals Planned</span><span style="font-size:.88rem;color:var(--muted);">14 / 21</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:67%;"></div></div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-1"><span style="font-size:.88rem;font-weight:600;">Grocery Budget Used</span><span style="font-size:.88rem;color:var(--muted);">$142 / $200</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:71%;background:var(--accent);"></div></div>
+          </div>
+          <div class="mb-1">
+            <div class="d-flex justify-content-between mb-1"><span style="font-size:.88rem;font-weight:600;">Food Waste Saved</span><span style="font-size:.88rem;color:var(--muted);">$28 this week</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:85%;background:var(--forest-lt);"></div></div>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-title"><i class="fa-solid fa-bolt" style="color:var(--accent);"></i>Quick Actions</div>
+          <div class="d-grid gap-2">
+            <a href="resources.html" class="btn-sm-cta text-center">📋 Browse Recipes</a>
+            <a href="resources.html" class="btn-sm-cta text-center" style="background:var(--tan-dk);">🛒 Build Grocery List</a>
+            <a href="community.html" class="btn-sm-cta text-center" style="background:var(--forest-lt);">👥 Visit Community</a>
+            <a href="nutrition.html" class="btn-sm-cta text-center" style="background:var(--accent);">🥦 Log Nutrition</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- UPCOMING MEALS / SHOPPING -->
+      <div class="col-lg-6">
+        <div class="dash-card">
+          <div class="dash-title"><i class="fa-solid fa-cart-shopping" style="color:var(--accent);"></i>Shopping List Preview</div>
+          <p style="font-size:.88rem;color:var(--muted);">Based on this week's meal plan (sample).</p>
+          <div style="columns:2;gap:1rem;font-size:.9rem;">
+            <div class="meal-row"><div class="meal-dot" style="background:var(--forest);"></div><span>Chicken breasts (2 lbs)</span></div>
+            <div class="meal-row"><div class="meal-dot" style="background:var(--forest);"></div><span>Salmon fillets (4)</span></div>
+            <div class="meal-row"><div class="meal-dot"></div><span>Brown rice (1 kg)</span></div>
+            <div class="meal-row"><div class="meal-dot"></div><span>Mixed vegetables</span></div>
+            <div class="meal-row"><div class="meal-dot" style="background:var(--tan-dk);"></div><span>Canned lentils (3)</span></div>
+            <div class="meal-row"><div class="meal-dot" style="background:var(--tan-dk);"></div><span>Greek yogurt</span></div>
+            <div class="meal-row"><div class="meal-dot" style="background:var(--accent);"></div><span>Pasta (500g)</span></div>
+            <div class="meal-row"><div class="meal-dot" style="background:var(--accent);"></div><span>Olive oil</span></div>
+          </div>
+          <div class="mt-3">
+            <a href="resources.html" class="btn-sm-cta">View Full List (Members)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- UPCOMING EVENTS -->
+      <div class="col-lg-6">
+        <div class="dash-card">
+          <div class="dash-title"><i class="fa-solid fa-video" style="color:var(--accent);"></i>Upcoming Live Sessions</div>
+          <div class="meal-row">
+            <div class="meal-dot" style="background:var(--accent);"></div>
+            <div>
+              <div class="meal-day">Wed, June 4 · 7:00 PM CST</div>
+              <div class="meal-name">Live Q&amp;A — Batch Cooking on a Budget with Quincy</div>
+            </div>
+          </div>
+          <div class="meal-row">
+            <div class="meal-dot" style="background:var(--forest);"></div>
+            <div>
+              <div class="meal-day">Mon, June 9 · 6:30 PM CST</div>
+              <div class="meal-name">Nutrition Workshop — Eating for Midlife Energy with Jaymee</div>
+            </div>
+          </div>
+          <div class="meal-row">
+            <div class="meal-dot" style="background:var(--tan-dk);"></div>
+            <div>
+              <div class="meal-day">Wed, June 18 · 7:00 PM CST</div>
+              <div class="meal-name">Community Recipe Swap &amp; Q&amp;A</div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <a href="login.html" class="btn-sm-cta">Register (Pro/Premium)</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MEMBER UPGRADE CTA -->
+    <div class="alert-trial mt-4">
+      <strong>You're viewing a demo dashboard.</strong> Sign up for a free trial to access your personalized dashboard, save meal plans, and manage your grocery lists.
+      <a href="signup.html" class="btn-primary-cta ms-3" style="padding:.5rem 1.5rem;font-size:.88rem;">Start Free Trial</a>
+    </div>
+
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

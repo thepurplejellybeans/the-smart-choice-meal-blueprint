@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing | The Smart Choice Meal Blueprint</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+
+<div id="app-nav"></div>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Simple, Honest Pricing</h1>
+    <p>Start free, scale when you're ready. No contracts — cancel anytime.</p>
+  </div>
+</div>
+
+<!-- FREE TRIAL NOTICE -->
+<section class="section-pad-sm">
+  <div class="container">
+    <div class="alert-trial d-flex align-items-center gap-3">
+      <i class="fa-solid fa-gift fa-2x" style="color:var(--accent);flex-shrink:0;"></i>
+      <span><strong>Not sure yet?</strong> Every plan starts with a <strong>free 3-day trial</strong> — no credit card required. Full access, upgrade or cancel anytime.</span>
+      <a href="signup.html" class="btn-sm-cta ms-auto flex-shrink-0">Try Free</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING CARDS -->
+<section class="section-pad-sm">
+  <div class="container">
+
+    <!-- BILLING TOGGLE -->
+    <div class="text-center mb-4">
+      <div style="display:inline-flex;background:var(--sand);border-radius:40px;padding:.35rem;gap:.25rem;border:1px solid var(--tan-lt);">
+        <button class="billing-toggle active" data-billing="monthly"  onclick="setBilling('monthly')">Monthly</button>
+        <button class="billing-toggle"        data-billing="biannual" onclick="setBilling('biannual')">
+          6 Months <span style="font-size:.7rem;background:var(--accent);color:#fff;border-radius:10px;padding:.1rem .5rem;margin-left:.3rem;">Save 15%</span>
+        </button>
+        <button class="billing-toggle"        data-billing="annual"   onclick="setBilling('annual')">
+          Annual <span style="font-size:.7rem;background:var(--forest);color:#fff;border-radius:10px;padding:.1rem .5rem;margin-left:.3rem;">Save 25%</span>
+        </button>
+      </div>
+    </div>
+
+    <style>
+      .billing-toggle {
+        background: none; border: none; padding: .5rem 1.2rem;
+        border-radius: 30px; font-family: 'DM Sans', sans-serif;
+        font-size: .88rem; font-weight: 600; cursor: pointer;
+        color: var(--muted); transition: all .2s;
+      }
+      .billing-toggle.active { background: var(--white); color: var(--forest); box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+      .price-display { transition: all .25s; }
+      .was-price { font-size:.85rem; color: var(--muted); text-decoration: line-through; margin-bottom:.15rem; }
+      .save-badge {
+        display:inline-block; background: #e8f5e9; color: var(--forest);
+        font-size:.75rem; font-weight:700; padding:.2rem .65rem;
+        border-radius:20px; margin-top:.3rem; border: 1px solid rgba(45,74,45,.2);
+      }
+    </style>
+
+    <div class="row g-4 align-items-start">
+
+      <!-- STARTER -->
+      <div class="col-md-4">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 class="mb-1">Starter</h3>
+            <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem;">Level I — Essential Tools</p>
+            <div class="price-display">
+              <div class="was-price" id="starter-was" style="display:none;"></div>
+              <div class="price" id="starter-price">$19</div>
+              <div class="price-note" id="starter-note">per month</div>
+              <div class="save-badge" id="starter-save" style="display:none;"></div>
+            </div>
+          </div>
+          <div class="pricing-body">
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Digital meal planning tool</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Weekly meal calendar templates</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Basic shopping list generator</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>20 healthy family recipes</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Email support (business hours)</div>
+            <div class="pricing-feature na"><i class="fa-solid fa-xmark"></i>Expanded recipe library (100+)</div>
+            <div class="pricing-feature na"><i class="fa-solid fa-xmark"></i>Video cooking tutorials</div>
+            <div class="pricing-feature na"><i class="fa-solid fa-xmark"></i>Live Q&amp;A sessions</div>
+            <div class="pricing-feature na"><i class="fa-solid fa-xmark"></i>Private community access</div>
+            <div class="pricing-feature na"><i class="fa-solid fa-xmark"></i>Coaching sessions</div>
+            <div class="mt-4 text-center">
+              <a href="signup.html" class="btn-outline-cta d-block text-center">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRO (FEATURED) -->
+      <div class="col-md-4">
+        <div class="pricing-card featured">
+          <div class="pricing-header">
+            <div class="pricing-badge">Most Popular</div>
+            <h3 class="mb-1">Pro</h3>
+            <p style="font-size:.85rem;color:rgba(232,221,208,.75);margin-bottom:1rem;">Level II — Enhanced Solutions</p>
+            <div class="price-display">
+              <div class="was-price" id="pro-was" style="display:none;"></div>
+              <div class="price" id="pro-price">$39</div>
+              <div class="price-note" id="pro-note">per month</div>
+              <div class="save-badge" id="pro-save" style="display:none;"></div>
+            </div>
+          </div>
+          <div class="pricing-body">
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i><strong>Everything in Starter</strong></div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Expanded recipe library (100+ recipes)</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Interactive video cooking tutorials</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Advanced shopping list with cost-saving tips</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Monthly live Q&amp;A with nutrition experts</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Priority email support</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Private community membership</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>One-time 30-min coaching session</div>
+            <div class="pricing-feature na"><i class="fa-solid fa-xmark"></i>Weekly coaching (4×/month)</div>
+            <div class="pricing-feature na"><i class="fa-solid fa-xmark"></i>Personalized monthly consultation</div>
+            <div class="mt-4 text-center">
+              <a href="signup.html" class="btn-primary-cta d-block text-center">Choose Pro</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="col-md-4">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 class="mb-1">Premium</h3>
+            <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem;">Level III — Comprehensive Wellness</p>
+            <div class="price-display">
+              <div class="was-price" id="premium-was" style="display:none;"></div>
+              <div class="price" id="premium-price">$79</div>
+              <div class="price-note" id="premium-note">per month</div>
+              <div class="save-badge" id="premium-save" style="display:none;"></div>
+            </div>
+          </div>
+          <div class="pricing-body">
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i><strong>Everything in Pro</strong></div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Monthly 1-on-1 consultation with nutrition expert</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Fully customizable meal plans</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Batch cooking guides &amp; prep strategies</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Weekly coaching (4 sessions/month)</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Dedicated chat &amp; email support</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>Exclusive webinars &amp; workshops</div>
+            <div class="pricing-feature"><i class="fa-solid fa-check"></i>24/7 tech support</div>
+            <div class="mt-4 text-center">
+              <a href="signup.html" class="btn-outline-cta d-block text-center">Go Premium</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+const plans = {
+  starter:  { monthly: 19,  biannual: 97,  annual: 171 },
+  pro:      { monthly: 39,  biannual: 199, annual: 351 },
+  premium:  { monthly: 79,  biannual: 403, annual: 711 }
+};
+const notes = {
+  monthly:  'per month',
+  biannual: 'billed every 6 months',
+  annual:   'billed annually'
+};
+const saves = {
+  monthly:  null,
+  biannual: { pct: '15%', label: 'You save {s}/year vs. monthly' },
+  annual:   { pct: '25%', label: 'You save {s}/year vs. monthly' }
+};
+
+function setBilling(type) {
+  document.querySelectorAll('.billing-toggle').forEach(b => b.classList.remove('active'));
+  document.querySelector(`[data-billing="${type}"]`).classList.add('active');
+
+  ['starter','pro','premium'].forEach(plan => {
+    const monthly   = plans[plan].monthly;
+    const price     = plans[plan][type];
+    const annualFull = monthly * 12;
+    const annualPaid = type === 'annual' ? price : (type === 'biannual' ? price * 2 : price * 12);
+    const saved      = annualFull - annualPaid;
+
+    document.getElementById(`${plan}-price`).textContent = `$${price}`;
+    document.getElementById(`${plan}-note`).textContent  = notes[type];
+
+    const wasEl  = document.getElementById(`${plan}-was`);
+    const saveEl = document.getElementById(`${plan}-save`);
+
+    if (type === 'monthly') {
+      wasEl.style.display  = 'none';
+      saveEl.style.display = 'none';
+    } else {
+      wasEl.textContent    = `Regular: $${monthly * (type === 'biannual' ? 6 : 12)} ${type === 'biannual' ? '/6 months' : '/year'}`;
+      wasEl.style.display  = 'block';
+      saveEl.textContent   = `You save $${saved}/year`;
+      saveEl.style.display = 'inline-block';
+    }
+  });
+}
+</script>
+
+<!-- SUBSCRIPTION LENGTH NOTE -->
+<section class="section-pad-sm section-sand">
+  <div class="container text-center">
+    <h2 class="section-heading" style="font-size:1.9rem;">Flexible Billing Options</h2>
+    <div class="divider-leaf"></div>
+    <div class="row g-4 mt-2 justify-content-center">
+      <div class="col-md-4">
+        <div class="card-scmb text-center">
+          <span class="card-icon"><i class="fa-regular fa-calendar"></i></span>
+          <h5>Monthly</h5>
+          <p class="text-muted">Pay month-to-month. Best for trying the platform before committing.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-scmb text-center">
+          <span class="card-icon"><i class="fa-solid fa-percent"></i></span>
+          <h5>Biannual — Save 15%</h5>
+          <p class="text-muted">6-month commitment at a discounted rate. Great middle ground.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-scmb text-center">
+          <span class="card-icon"><i class="fa-solid fa-piggy-bank"></i></span>
+          <h5>Annual — Save 25%</h5>
+          <p class="text-muted">Our best value. Full year of access at the highest discount.</p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-4 text-muted" style="font-size:.9rem;">All prices in Canadian dollars. GST/HST not included where applicable.</p>
+  </div>
+</section>
+
+<!-- FAQ TEASER -->
+<section class="section-pad-sm text-center">
+  <div class="container">
+    <h3 class="section-heading" style="font-size:1.9rem;">Have Questions?</h3>
+    <p class="text-muted">Check out our FAQ page for answers to the most common questions about our plans and features.</p>
+    <a href="faq.html" class="btn-outline-cta mt-2">Read the FAQ</a>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
